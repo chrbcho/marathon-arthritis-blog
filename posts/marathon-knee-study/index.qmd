@@ -1,0 +1,80 @@
+---
+title: "3,800 Marathoners Later: What the Data Says About Weekly Mileage and Arthritis"
+subtitle: "Everyone says long-distance running leads to arthritis but the data suggests the truth is in the numbers, not the rumors."
+author: "Christine Chow"
+date: "2026-01-17"
+categories: [Data Science, Health, Running]
+---
+
+### From 13.1 to 26.2
+
+Congratulations, you have just crossed the finish line of your first half marathon! With tired legs and body still humming from the excitement of the race, the thought of doubling that distance and finishing a full 26.2 mile race all of a sudden feels possible.
+
+However when you share these marathon goals with your friends, family and even coworkers, the cautionary tales of knee injury starts flowing in: "Be careful of your knees, they are going to be ruined with that much running" and "My Uncle Bob's arthritis is so bad now. I heard he use to run a lot when he was younger". The persistent advice of joints being permanently damaged from high mileage running does make one wonder. As a fellow amateur runner myself, I too have wondered if chasing my dream of completing the World Marathon Major circuit was setting me up for permanent injury. Instead of letting rumours dictate if my Six Star Medal will ever come to fruition, let's allow the data to speak for itself.
+
+To find the truth into this matter, we are going to look into a [study of 3,804 runners](https://doi.org/10.1177/19417381231190876) from the 2019 and 2021 Chicago Marathons. By using a statistical tool called multivariable logistic regression, the researchers were able to separate facts from fiction. Does high mileage actually predict arthritis or have we been unfairly blaming the distance?
+
+### Isolating Running from Everything Else
+
+Before we dig into the results of the study, let's understand how the researcher found these results. In the group of 3,804 runners, the data is messy and nothing is as simple as it seems. For example, some older runners might have joint pain because they are older, not necessarily because they have run more miles over the course of their lives. If we look at a simple chart of "Miles vs Pain", we may get a false result where one variable takes the blame for another variable's impact.
+
+This is where multivariable logistic regression comes in to help. Think of it as a statistical filter that allows us to only look at the impact of "Weekly Mileage" while mathematically holding other factors such as age, sex, etc constant. It is the data science way of isolating one variable by itself to see if it is the culprit causing arthritis.
+
+In this study, researchers were looking for the Odds Ratio (OR). In more simple terms, if the OR for mileage is 1.0, it means that running more miles does not change your odds of having arthritis at all. Anything significantly larger than 1.0 where the 95% Confidence Interval stays above baseline, would be a red flag. So what do the results say?
+
+### Running the Numbers - What the Data Actually Found
+
+The table below shows the results of the multivariable logistic regression. Notice how the running factors stay right near 1.0 while health factors are above 1.0
+
+| Risk Factor | Odds Ratio (OR) | 95% Confidence Interval | p-value | Impact on Arthritis |
+|---------------|:-------------:|:-------------:|:-------------:|:-------------:|
+| Weekly Mileage | 0.99 | 0.98 - 1.01 | 0.36 | No Association |
+| Total Years of Running | 1.00 | 0.98 - 1.01 | 0.66 | No Association |
+| Number of Marathons | 1.00 | 0.99 - 1.01 | 0.56 | No Association |
+| Running Pace | 0.88 | 0.79 - 0.99 | 0.03 | No Association |
+| BMI (Body Mass Index) | 1.10 | 1.05 - 1.15 | \<0.01 | Significant Risk |
+| Age | 1.08 | 1.06 - 1.10 | \<0.01 | Significant Risk |
+| Family History | 3.47 | 2.52 - 4.79 | \<0.01 | High Risk |
+| Previous Injuries | 5.04 | 3.45 - 7.34 | \<0.01 | High Risk |
+
+In the world of statistics, we look for a p-value of less than 0.05 to claim a result is 'real.' As you can see, most running factors have high p-values, meaning any link to arthritis is likely just due to random chance, not the miles themselves.
+
+If high mileage is the cause for arthritis, the data would clearly show that there is a spike in arthritis for high-volume runners. Pssst for anyone training for their Six Star Medal - the results from the multivariable regression model has good news for us.
+
+The researchers analyzed several running-related history variables and have found the following.
+
+-   Weekly Mileage: whether runners were logging 10 miles or 50 miles, there was no significant association with arthritis diagnosis
+
+-   Total Years of Running: amount of long-term running did not increase the odds of joint wear and tear
+
+-   Number of Marathons: regardless if it was 5, 10 or 20+ marathons completed, the odds of predicting arthritis were the same between veteran marathoners and first time finishers
+
+-   Running Pace: speed does not matter, you could be a Boston Qualifier or a finisher at the back, the odds of developing arthritis is the same
+
+Looking at the Odds Ratios themselves, the above factors stayed pretty close to 1.0, meaning that for the average runner, mileage was not the enemy we have been told it was all along.
+
+### The Real Culprits: Why Uncle Bob is Sore
+
+If distance is not the culprit, then why does Uncle Bob have such bad knees? The study did find some interesting results that predicted arthritis. Below are the factors that had a significant Odds Ratio from the regression model.
+
+-   BMI (Body Mass Index): higher body mass places a consistent non-running stress on joints
+
+-   Age: older we are, the more likely we will develop arthritis
+
+-   Family History: genetics play a major role on joint health
+
+-   Previous Injuries: runners with a history of knee injuries are more likely to develop arthritis
+
+The risk of developing arthritis is not running itself but the factors of the runner themselves: weight, age, genetics and injury history. Unfortunately for Uncle Bob, his bad knees are more likely due to his older age than it is because of his distance running when he was younger.
+
+### Crossing Your Own Finish Line
+
+So should you be committing to that full marathon training plan? The data says yes, there is no problem (other than the huge time commitment but that's a topic for another day). Although 24.2% of runners in this study were told by their healthcare professional to stop running, the numbers show that many of the warnings might have been based more on old beliefs than current evidence.
+
+For the healthy amateur runner, your knees are much more sturdier than your friends and family believe. So go ahead and sign up for your first marathon (or your 50th!), and begin your marathon journey.
+
+------------------------------------------------------------------------
+
+#### References
+
+Hartwell, M. J., et al. (2023). Does Running Increase the Risk of Hip and Knee Arthritis? A Survey of 3804 Marathon Runners. *Sports Health*. <https://doi.org/10.1177/19417381231190876>
