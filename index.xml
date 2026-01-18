@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Christine Chow</title>
+<link>https://your-website-url.example.com/</link>
+<atom:link href="https://your-website-url.example.com/index.xml" rel="self" type="application/rss+xml"/>
+<description>A blog built with Quarto</description>
+<generator>quarto-1.8.26</generator>
+<lastBuildDate>Sat, 17 Jan 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>3,800 Marathoners Later: What the Data Says About Weekly Mileage and Arthritis</title>
+  <dc:creator>Christine Chow</dc:creator>
+  <link>https://your-website-url.example.com/posts/marathon-knee-study/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="from-13.1-to-26.2" class="level3">
+<h3 class="anchored" data-anchor-id="from-13.1-to-26.2">From 13.1 to 26.2</h3>
+<p>Congratulations, you have just crossed the finish line of your first half marathon! With tired legs and body still humming from the excitement of the race, the thought of doubling that distance and finishing a full 26.2 mile race all of a sudden feels possible.</p>
+<p>However when you share these marathon goals with your friends, family and even coworkers, the cautionary tales of knee injury starts flowing in: “Be careful of your knees, they are going to be ruined with that much running” and “My Uncle Bob’s arthritis is so bad now. I heard he use to run a lot when he was younger”. The persistent advice of joints being permanently damaged from high mileage running does make one wonder. As a fellow amateur runner myself, I too have wondered if chasing my dream of completing the World Marathon Major circuit was setting me up for permanent injury. Instead of letting rumours dictate if my Six Star Medal will ever come to fruition, let’s allow the data to speak for itself.</p>
+<p>To find the truth into this matter, we are going to look into a <a href="https://doi.org/10.1177/19417381231190876">study of 3,804 runners</a> from the 2019 and 2021 Chicago Marathons. By using a statistical tool called multivariable logistic regression, the researchers were able to separate facts from fiction. Does high mileage actually predict arthritis or have we been unfairly blaming the distance?</p>
+</section>
+<section id="isolating-running-from-everything-else" class="level3">
+<h3 class="anchored" data-anchor-id="isolating-running-from-everything-else">Isolating Running from Everything Else</h3>
+<p>Before we dig into the results of the study, let’s understand how the researcher found these results. In the group of 3,804 runners, the data is messy and nothing is as simple as it seems. For example, some older runners might have joint pain because they are older, not necessarily because they have run more miles over the course of their lives. If we look at a simple chart of “Miles vs Pain”, we may get a false result where one variable takes the blame for another variable’s impact.</p>
+<p>This is where multivariable logistic regression comes in to help. Think of it as a statistical filter that allows us to only look at the impact of “Weekly Mileage” while mathematically holding other factors such as age, sex, etc constant. It is the data science way of isolating one variable by itself to see if it is the culprit causing arthritis.</p>
+<p>In this study, researchers were looking for the Odds Ratio (OR). In more simple terms, if the OR for mileage is 1.0, it means that running more miles does not change your odds of having arthritis at all. Anything significantly larger than 1.0 where the 95% Confidence Interval stays above baseline, would be a red flag. So what do the results say?</p>
+</section>
+<section id="running-the-numbers---what-the-data-actually-found" class="level3">
+<h3 class="anchored" data-anchor-id="running-the-numbers---what-the-data-actually-found">Running the Numbers - What the Data Actually Found</h3>
+<p>The table below shows the results of the multivariable logistic regression. Notice how the running factors stay right near 1.0 while health factors are above 1.0</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Risk Factor</th>
+<th style="text-align: center;">Odds Ratio (OR)</th>
+<th style="text-align: center;">95% Confidence Interval</th>
+<th style="text-align: center;">p-value</th>
+<th style="text-align: center;">Impact on Arthritis</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Weekly Mileage</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">0.98 - 1.01</td>
+<td style="text-align: center;">0.36</td>
+<td style="text-align: center;">No Association</td>
+</tr>
+<tr class="even">
+<td>Total Years of Running</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.98 - 1.01</td>
+<td style="text-align: center;">0.66</td>
+<td style="text-align: center;">No Association</td>
+</tr>
+<tr class="odd">
+<td>Number of Marathons</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">0.99 - 1.01</td>
+<td style="text-align: center;">0.56</td>
+<td style="text-align: center;">No Association</td>
+</tr>
+<tr class="even">
+<td>Running Pace</td>
+<td style="text-align: center;">0.88</td>
+<td style="text-align: center;">0.79 - 0.99</td>
+<td style="text-align: center;">0.03</td>
+<td style="text-align: center;">No Association</td>
+</tr>
+<tr class="odd">
+<td>BMI (Body Mass Index)</td>
+<td style="text-align: center;">1.10</td>
+<td style="text-align: center;">1.05 - 1.15</td>
+<td style="text-align: center;">&lt;0.01</td>
+<td style="text-align: center;">Significant Risk</td>
+</tr>
+<tr class="even">
+<td>Age</td>
+<td style="text-align: center;">1.08</td>
+<td style="text-align: center;">1.06 - 1.10</td>
+<td style="text-align: center;">&lt;0.01</td>
+<td style="text-align: center;">Significant Risk</td>
+</tr>
+<tr class="odd">
+<td>Family History</td>
+<td style="text-align: center;">3.47</td>
+<td style="text-align: center;">2.52 - 4.79</td>
+<td style="text-align: center;">&lt;0.01</td>
+<td style="text-align: center;">High Risk</td>
+</tr>
+<tr class="even">
+<td>Previous Injuries</td>
+<td style="text-align: center;">5.04</td>
+<td style="text-align: center;">3.45 - 7.34</td>
+<td style="text-align: center;">&lt;0.01</td>
+<td style="text-align: center;">High Risk</td>
+</tr>
+</tbody>
+</table>
+<p>In the world of statistics, we look for a p-value of less than 0.05 to claim a result is ‘real.’ As you can see, most running factors have high p-values, meaning any link to arthritis is likely just due to random chance, not the miles themselves.</p>
+<p>If high mileage is the cause for arthritis, the data would clearly show that there is a spike in arthritis for high-volume runners. Pssst for anyone training for their Six Star Medal - the results from the multivariable regression model has good news for us.</p>
+<p>The researchers analyzed several running-related history variables and have found the following.</p>
+<ul>
+<li><p>Weekly Mileage: whether runners were logging 10 miles or 50 miles, there was no significant association with arthritis diagnosis</p></li>
+<li><p>Total Years of Running: amount of long-term running did not increase the odds of joint wear and tear</p></li>
+<li><p>Number of Marathons: regardless if it was 5, 10 or 20+ marathons completed, the odds of predicting arthritis were the same between veteran marathoners and first time finishers</p></li>
+<li><p>Running Pace: speed does not matter, you could be a Boston Qualifier or a finisher at the back, the odds of developing arthritis is the same</p></li>
+</ul>
+<p>Looking at the Odds Ratios themselves, the above factors stayed pretty close to 1.0, meaning that for the average runner, mileage was not the enemy we have been told it was all along.</p>
+</section>
+<section id="the-real-culprits-why-uncle-bob-is-sore" class="level3">
+<h3 class="anchored" data-anchor-id="the-real-culprits-why-uncle-bob-is-sore">The Real Culprits: Why Uncle Bob is Sore</h3>
+<p>If distance is not the culprit, then why does Uncle Bob have such bad knees? The study did find some interesting results that predicted arthritis. Below are the factors that had a significant Odds Ratio from the regression model.</p>
+<ul>
+<li><p>BMI (Body Mass Index): higher body mass places a consistent non-running stress on joints</p></li>
+<li><p>Age: older we are, the more likely we will develop arthritis</p></li>
+<li><p>Family History: genetics play a major role on joint health</p></li>
+<li><p>Previous Injuries: runners with a history of knee injuries are more likely to develop arthritis</p></li>
+</ul>
+<p>The risk of developing arthritis is not running itself but the factors of the runner themselves: weight, age, genetics and injury history. Unfortunately for Uncle Bob, his bad knees are more likely due to his older age than it is because of his distance running when he was younger.</p>
+</section>
+<section id="crossing-your-own-finish-line" class="level3">
+<h3 class="anchored" data-anchor-id="crossing-your-own-finish-line">Crossing Your Own Finish Line</h3>
+<p>So should you be committing to that full marathon training plan? The data says yes, there is no problem (other than the huge time commitment but that’s a topic for another day). Although 24.2% of runners in this study were told by their healthcare professional to stop running, the numbers show that many of the warnings might have been based more on old beliefs than current evidence.</p>
+<p>For the healthy amateur runner, your knees are much more sturdier than your friends and family believe. So go ahead and sign up for your first marathon (or your 50th!), and begin your marathon journey.</p>
+<hr>
+<section id="references" class="level4">
+<h4 class="anchored" data-anchor-id="references">References</h4>
+<p>Hartwell, M. J., et al.&nbsp;(2023). Does Running Increase the Risk of Hip and Knee Arthritis? A Survey of 3804 Marathon Runners. <em>Sports Health</em>. <a href="https://doi.org/10.1177/19417381231190876" class="uri">https://doi.org/10.1177/19417381231190876</a></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Data Science</category>
+  <category>Health</category>
+  <category>Running</category>
+  <guid>https://your-website-url.example.com/posts/marathon-knee-study/</guid>
+  <pubDate>Sat, 17 Jan 2026 08:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Post With Code</title>
+  <dc:creator>Harlow Malloc</dc:creator>
+  <link>https://your-website-url.example.com/posts/post-with-code/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This is a post with executable code.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <category>code</category>
+  <category>analysis</category>
+  <guid>https://your-website-url.example.com/posts/post-with-code/</guid>
+  <pubDate>Sat, 17 Jan 2026 08:00:00 GMT</pubDate>
+  <media:content url="https://your-website-url.example.com/posts/post-with-code/image.jpg" medium="image" type="image/jpeg"/>
+</item>
+<item>
+  <title>Welcome To My Blog</title>
+  <dc:creator>Tristan O&#39;Malley</dc:creator>
+  <link>https://your-website-url.example.com/posts/welcome/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>This is the first post in a Quarto blog. Welcome!</p>
+<p><img src="https://your-website-url.example.com/posts/welcome/thumbnail.jpg" class="img-fluid"></p>
+<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+
+
+
+ ]]></description>
+  <category>news</category>
+  <guid>https://your-website-url.example.com/posts/welcome/</guid>
+  <pubDate>Wed, 14 Jan 2026 08:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
