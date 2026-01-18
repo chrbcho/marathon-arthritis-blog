@@ -27,7 +27,7 @@ In this study, researchers were looking for the Odds Ratio (OR). In more simple 
 The table below shows the results of the multivariable logistic regression. Notice how the running factors stay right near 1.0 while health factors are above 1.0
 
 | Risk Factor | Odds Ratio (OR) | 95% Confidence Interval | p-value | Impact on Arthritis |
-|---------------|:-------------:|:-------------:|:-------------:|:-------------:|
+|----|:--:|:--:|:--:|:--:|
 | Weekly Mileage | 0.99 | 0.98 - 1.01 | 0.36 | No Association |
 | Total Years of Running | 1.00 | 0.98 - 1.01 | 0.66 | No Association |
 | Number of Marathons | 1.00 | 0.99 - 1.01 | 0.56 | No Association |
